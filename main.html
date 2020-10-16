@@ -10,17 +10,30 @@
 <body>
     <h1>Elektron JS</h1>
     <br>
-    <button id="btnSend">Tıkla</button>
+    <input type="text" id="txtUserName" placeholder="User Name">
+    <button id="btnSend">Sohbete Başla</button>
+    <div>
+        <h2>Sohbetler</h2>
+        <table style="width: 100%;" id="chatTable">
+            <tr>
+                <td>#</td>
+                <td>User Name</td>
+                <td>Message Count</td>
+            </tr>
+        </table>
+    </div>
     <script>
         const electron = require("electron");
         const {
             ipcRenderer
         } = electron;
         let btnSend = document.querySelector("#btnSend");
+        let txtUserName = document.querySelector("#txtUserName");
         btnSend.addEventListener("click", () => {
-            ipcRenderer.send("key", "fatih Gürdal | Electron JS");
+            ipcRenderer.send("key:newChat", txtUserName.value);
         });
     </script>
+    <script src="mainWindow.js" defer></script>
 </body>
 
 </html>

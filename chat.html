@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+
+<body>
+    <textarea id="txtNewMessage" id="" cols="30" rows="5"></textarea>
+    <button id="btnSendMessage">Gönder</button>
+
+    <script>
+        const electron = require("electron");
+        const {
+            ipcRenderer
+        } = electron;
+        let btnSendMessage = document.querySelector("#btnSendMessage");
+        let txtNewMessage = document.querySelector("#txtNewMessage");
+        btnSendMessage.addEventListener("click", () => {
+            let payload = {
+                username: "Bilinmiyor",
+                message: txtNewMessage.value
+            };
+            ipcRenderer.send("key:newMessage", payload);
+        });
+    </script>
+</body>
+
+</html>
