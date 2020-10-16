@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron JS Demo Projesi</title>
+</head>
+
+<body>
+    <h1>Elektron JS</h1>
+    <br>
+    <button id="btnSend">Tıkla</button>
+    <script>
+        const electron = require("electron");
+        const {
+            ipcRenderer
+        } = electron;
+        let btnSend = document.querySelector("#btnSend");
+        btnSend.addEventListener("click", () => {
+            ipcRenderer.send("key", "fatih Gürdal | Electron JS");
+        });
+    </script>
+</body>
+
+</html>

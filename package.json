@@ -1,0 +1,22 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "Electron JS için demo projesi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatihgurdal/ElectronDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatihgurdal/ElectronDemo/issues"
+  },
+  "homepage": "https://github.com/fatihgurdal/ElectronDemo#readme",
+  "dependencies": {
+    "electron": "^10.1.3"
+  }
+}
